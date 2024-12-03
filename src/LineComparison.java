@@ -23,6 +23,15 @@ public class LineComparison {
                Double.compare(x2, other.x2) == 0 &&
                Double.compare(y2, other.y2) == 0;
     }
+    public void compareTo(LineComparison other) {
+        int temp= Double.compare(this.calculateLength(), other.calculateLength());
+        if(temp==0)
+        	System.out.println("Both lines are of equal length");
+        else if(temp>0)
+        	System.out.println("Line 1 is greater than Line 2");
+        else
+        	System.out.println("Line 1 is less than Line 2");
+    }
 	public static void main(String[] args) {
 		System.out.println("Welcome to Line Comparison Computation Program");
 		Scanner scan=new Scanner(System.in);
@@ -48,6 +57,8 @@ public class LineComparison {
 		System.out.println("Line 1 Length: " + line1.calculateLength());
 		System.out.println("Line 2 Length: " + line2.calculateLength());
 		System.out.println("Line 1 equals Line 2: " + line1.equals(line2));
+		System.out.println("Line Comparison Result: " );
+		line1.compareTo(line2);
 	}
 
 }
